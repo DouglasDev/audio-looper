@@ -1,0 +1,14 @@
+-looping
+-set number of measures for loop
+-no stop recording button
+
+-adjustable pre-roll
+-select number of beats
+-countdown clock
+
+-independently control volume of metronome and recording
+
+-adjust offset decibal spike "set phone to max volume"
+-figure out how to pass data between routes/to parent components
+
+

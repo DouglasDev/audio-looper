@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick=start()>start</button>
+	<button onclick=loop()>loop</button>
+	<button onclick=stop2()>stop2</button>
+	<button onclick=restart2()>restart2</button>
+	<button onclick=changeTempo()>changeTempo</button>
+	<button onclick=volumeUp()>volumeUp</button>
+	<button onclick=volumeDown()>volumeDown</button>
+	<button onclick=panUp()>panUp</button>
+	<button onclick=panDown()>panDown</button>
+	<button onclick=mute()>mute</button>
+</body>
+<script src="Tone.min.js"></script>
+<script>
+
+// / Tone.Master   - can change master volume
+// DEFAULTS
+// {
+// volume  : 0 ,
+// mute  : false
+// }
+
+
+	var a,b,loop2,loop,volVal=0,vol,pan
+function start(){
+	console.log('start')
+	 a = new Tone.Player({
+		"url" : "./a.mp3",
+		// "autostart" : true,
+	}).toMaster();
+	 	// a=a.chain(PanVol,Tone.Master)
+
+	 b = new Tone.Player({
+		"url" : "./b.mp3",
+		// "autostart" : true,
+	}).toMaster();
+	 // console.log(a)
+	panner = new Tone.Panner(0)
+
+}
+function loop(){
+	 loop = new Tone.Loop(function(time){
+		//triggered every eighth note. 
+		a.start(Tone.now()+.5);
+		// b.start(Tone.now()+.5)
+		// console.log(time);
+	}, "4n").start(0);
+	 loop2 = new Tone.Loop(function(time){
+		//triggered every eighth note. 
+		// a.start(Tone.now()+.1);
+		b.start(Tone.now()+.5)
+		console.log(time);
+	}, 1.123).start(0);
+	Tone.Transport.start();
+
+	// console.log(a,b)
+}
+function stop2(){
+	loop2.stop(0)
+}
+function restart2(){
+	loop2.start(0)
+}
+
+function changeTempo(){
+	Tone.Transport.bpm.value = Tone.Transport.bpm.value+10;
+	console.log(Tone.Transport.bpm.value)
+
+}
+function volumeUp(){
+	a.volume.value+=1
+}
+function volumeDown(){
+	a.volume.value-=1
+}
+function mute(){
+	a.mute=!a.mute
+}
+//The pan control. -1 = hard left, 1 = hard right.
+
+function panUp(){
+	panner.pan.value+=.1
+	console.log(panner)
+	a.chain(panner,Tone.Master)
+}
+function panDown(){
+	panner.pan.value-=.1
+	console.log(panner)
+	a.chain(panner,Tone.Master)
+}
+</script>
+
+</html>

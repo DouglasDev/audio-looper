@@ -1,0 +1,19 @@
+todos:
+-get basic recording functionality to work!!
+-add preroll - 
+	-count down clock
+	-get position in measure: 
+	bar has 4 beats - pre-roll 5 beats - start on beat 4 	
+	bar has 4 beats - pre-roll 6 beats - start on beat 3 	
+	bar has 4 beats - pre-roll 7 beats - start on beat 2 
+	equation: 4-((n-1)%4) - need to test further
+	beatsInMeasure-((prerollBeats-1)%beatsInMeasure)
+	-need to start recording .5 seconds early - if preroll is less than .5 seconds add "pre-pre-roll"
+	-playback - start audio track .5s+time delta
+-add looping 
+	- make sure to end loop so that loop length exactly matches metronome length - use sound sprites??
+	
+-decide - use my code or demo code?
+-aligning clips - manual method?
+-aligning clips - try to auto adjust?
+	-start recording and play sound, save time, wait for difference of 10 plus decibels, get time delta

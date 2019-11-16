@@ -1,0 +1,13 @@
+1. You set up the number of bars, and the time signature, and then you can record with a pre-roll so that you can be playing already when the recording kicks in
+
+2. Once it has recorded the set number of bars, it stops recording, and you play the recording in a loop
+
+3. You can change the playback BPM without changing the pitch (there must be a plug-in for this)
+
+4. Volume control. Start / Stop. Record. 
+Save. Load Files to save and recall loops from local file system. A loop file will need to reference the audio, the metronome settings, and number of bars that the audio was recorded under.
+
+5. First version single track. Eventually could be multi-track. "Music Maker" is an example (but interface is not easy to use, and preloaded tracks are useless.
+
+6. When multi-track is implemented, each track will have independent Solo, Mute, Pan, and Volume controls. There will also be a master volume control.
+

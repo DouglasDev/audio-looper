@@ -1,0 +1,9 @@
+todo:
+-change speed without pitch shift
+-adjust speed of metronome with audio
+-record with cordova thingy
+done:
+-record audio, 
+-play back (copy e-comments code)
+-start/stop recording with metronome
+-start/stop playback with metronome
